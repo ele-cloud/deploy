@@ -32,7 +32,7 @@ var entry = {
       react(opts, spConfig);
     } else {
       spConfig.cwd = path.resolve(config.path.root , 'dist')
-      vue(opts, spCwd);
+      vue(opts, spConfig);
     }
   }
 }

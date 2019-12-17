@@ -10,7 +10,7 @@
 
 现如今，全税部门项目日益增多，每个项目开发完成后，需要手动构建并将文件包发送给运维同学部署。测试环境、生产环境，每次部署都会听到运维向你呼喊：“同学，**项目前端打个包发我一份”，那么为了规避这种现象，我们的 `ele-deploy` 应运而生。只需一个命令，将前端包部署至资源系统，想要最新包，那你就去下👋。
 
-[资源服务器地址](121.36.50.216:4002)
+[资源服务器地址](http://121.36.50.216:4002)
 
 ## 安装
 
@@ -43,7 +43,7 @@ package.json
 ```javascript
 "scripts": {
   //...
-  "deploy": "npm run build && ele --company product-大象产品线 --project declare-react.zip"
+  "deploy": "npm run build && ele --company product-大象产品线 --project declare-vue.zip"
  }
 ```
 
@@ -52,6 +52,6 @@ package.json
 ## 配置参数
 
 - `-c | --company` : 产品名称 （格式：产品英文名-产品中文名）
-- `-p | --project` : 项目文件名称 （支持三种后缀名格式：`.zip` `tar` `tar.gz`）
+- `-p | --project` : 项目文件包名称 （支持三种后缀名格式：`.zip` `.tar` `tar.gz`）
 - `--react` : 是否为 react 项目 （默认：否）
 - `-d | --debug`: 查看更多信息

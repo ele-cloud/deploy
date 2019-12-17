@@ -1,12 +1,14 @@
 var fs = require('fs');
+var path = require('path');
 var sp = require('shell-spawn');
 var request = require('request');
+var del = require('delete');
 
 var config = require('../config');
 var utils = require('../backend-utils/utils');
 
 function requestAnimation(opts, spConfig) {
-  var fileBuffer = fs.readFileSync(spConfig.cwd + '/' + opts.project);
+  var fileBuffer = fs.readFileSync(spConfig.cwd + '/' + opts.project, {encoding: 'base64'});
   var formData = {
     company: opts.company,
     project: opts.project,
@@ -20,43 +22,37 @@ function requestAnimation(opts, spConfig) {
       utils.log(['error: 提交服务器时发生错误：']);
       throw new Error(err);
     }
+    
+    utils.logs([
+      ['info: 部署完成😊']
+    ]);
+    
+    // remove deflate data
+    del.sync(spConfig.cwd + '/' + opts.project);
+    
     return body;
   });
 }
 
-module.exports = function (opts, spConfig) {
-  return sp('mv pages/index.html .', spConfig)
-    .then(function () {
-      return sp('rm -rf pages', spConfig);
-    })
-    .then(function () {
-      if (fs.existsSync(opts.project)) {
-        return sp('rm -f ' + opts.project, spConfig);
-      } else {
-        return true;
-      }
-    })
-    .then(function () {
-      var suffix = opts.project.replace(/.*?\./, '');
-      if (suffix === 'zip') {
-        return sp('zip -r ' + opts.project + ' ./*', spConfig);
-      } else if (suffix === 'tar') {
-        return sp('tar -cvf ' + opts.project + ' ./*', spConfig);
-      } else if (suffix === 'tar.gz') {
-        return sp('tar -zcvf ' + opts.project + ' ./*', spConfig);
-      } else {
-        throw new Error('不支持【' + suffix + '】的打包形式');
-      }
-    })
-    .then(function () {
-      return requestAnimation(opts, spConfig);
-    })
-    .then(function () {
-      utils.logs([
-        ['info: 部署完成😊']
-      ]);
-    })
-    .catch(function (ex) {
-      utils.log(['error: 运行错误', ex]);
-    });
+function errorLog(ex) {
+  utils.log(['error: 运行错误', ex]);
+  return;
+}
+
+module.exports = async function (opts, spConfig) {
+  fs.renameSync(path.resolve(spConfig.cwd, 'pages/index.html'), spConfig.cwd + '/index.html');
+  del.sync(spConfig.cwd + '/pages');
+  
+  var suffix = opts.project.replace(/.*?\./, '');
+  if (suffix === 'zip') {
+    await sp('zip -r ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
+  } else if (suffix === 'tar') {
+    await sp('tar -cvf ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
+  } else if (suffix === 'tar.gz') {
+    await('tar -zcvf ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
+  } else {
+    throw new Error('不支持【' + suffix + '】的打包形式');
+  }
+  
+  requestAnimation(opts, spConfig);
 };
