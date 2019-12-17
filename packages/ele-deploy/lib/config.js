@@ -4,7 +4,7 @@ var p = npath.resolve
 
 var config = {
     path: {
-        root: p(__dirname + '/../../')
+        root: p(__dirname + '/../../../')
     }
 }
 
