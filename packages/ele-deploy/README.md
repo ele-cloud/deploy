@@ -32,7 +32,7 @@ package.json
 ```javascript
 "scripts": {
   //...
-  "deploy": "matriks2 dest && ele --company product-大象产品线 --project declare-react.zip --react"
+  "deploy": "matriks2 dest && ele --company 大象产品线 --project declare-react.zip --react"
  }
 ```
 
@@ -43,7 +43,7 @@ package.json
 ```javascript
 "scripts": {
   //...
-  "deploy": "npm run build && ele --company product-大象产品线 --project declare-vue.zip"
+  "deploy": "npm run build && ele --company 大象产品线 --project declare-vue.zip"
  }
 ```
 
@@ -51,7 +51,29 @@ package.json
 
 ## 配置参数
 
-- `-c | --company` : 产品名称 （格式：产品英文名-产品中文名）
+- `-c | --company` : 项目公司名称
 - `-p | --project` : 项目文件包名称 （支持三种后缀名格式：`.zip` `.tar` `tar.gz`）
 - `--react` : 是否为 react 项目 （默认：否）
 - `-d | --debug`: 查看更多信息
+
+## 删除项目
+
+可直接在浏览器中输入：
+
+```bash
+http://121.36.50.216:4002/delete/${company}/${project}
+```
+
+- 删除项目
+
+```bash
+http://121.36.50.216:4002/delete/大象产品线/declare-vue.zip
+```
+
+- 删除公司
+
+```bash
+http://121.36.50.216:4002/delete/大象产品线
+```
+
+> 为前端留个后门，谨防线上误操作。
