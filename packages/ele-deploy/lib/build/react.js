@@ -8,7 +8,7 @@ var config = require('../config');
 var utils = require('../backend-utils/utils');
 
 function requestAnimation(opts, spConfig) {
-  var fileBuffer = fs.readFileSync(spConfig.cwd + '/' + opts.project, {encoding: 'base64'});
+  var fileBuffer = fs.readFileSync(path.resolve(spConfig.cwd, opts.project), {encoding: 'base64'});
   var formData = {
     company: opts.company,
     project: opts.project,
@@ -28,7 +28,7 @@ function requestAnimation(opts, spConfig) {
     ]);
     
     // remove deflate data
-    del.sync(spConfig.cwd + '/' + opts.project);
+    del.sync(path.resolve(spConfig.cwd, opts.project));
     
     return body;
   });
@@ -41,15 +41,15 @@ function errorLog(ex) {
 
 module.exports = async function (opts, spConfig) {
   fs.renameSync(path.resolve(spConfig.cwd, 'pages/index.html'), spConfig.cwd + '/index.html');
-  del.sync(spConfig.cwd + '/pages');
+  del.sync(path.resolve(spConfig.cwd, 'pages'));
   
   var suffix = opts.project.replace(/.*?\./, '');
   if (suffix === 'zip') {
-    await sp('zip -r ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
+    await sp('zip -r ' + opts.project + ' .', spConfig).catch(ex => errorLog(ex));
   } else if (suffix === 'tar') {
-    await sp('tar -cvf ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
+    await sp('tar -cvf ' + opts.project + ' .', spConfig).catch(ex => errorLog(ex));
   } else if (suffix === 'tar.gz') {
-    await sp('tar -zcvf ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
+    await sp('tar -zcvf ' + opts.project + ' .', spConfig).catch(ex => errorLog(ex));
   } else {
     throw new Error('不支持【' + suffix + '】的打包形式');
   }

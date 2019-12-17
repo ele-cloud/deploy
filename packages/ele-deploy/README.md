@@ -32,7 +32,7 @@ package.json
 ```javascript
 "scripts": {
   //...
-  "deploy": "matriks2 dest && ele --company 大象产品线 --project declare-react.zip --react"
+  "deploy": "matriks2 dest && ele --company 大象产品线 --project declare-react.tar.gz --react"
  }
 ```
 
@@ -43,7 +43,7 @@ package.json
 ```javascript
 "scripts": {
   //...
-  "deploy": "npm run build && ele --company 大象产品线 --project declare-vue.zip"
+  "deploy": "npm run build && ele --company 大象产品线 --project declare-vue.tar.gz"
  }
 ```
 
@@ -67,7 +67,7 @@ http://121.36.50.216:4002/delete/${company}/${project}
 - 删除项目
 
 ```bash
-http://121.36.50.216:4002/delete/大象产品线/declare-vue.zip
+http://121.36.50.216:4002/delete/大象产品线/declare-vue.tar.gz
 ```
 
 - 删除公司
