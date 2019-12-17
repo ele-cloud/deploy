@@ -1,0 +1,33 @@
+{
+  "name": "ele-deploy",
+  "version": "0.0.0",
+  "description": "大象慧云deploy",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngusYang9/ele-deploy.git"
+  },
+  "keywords": [
+    "deploy"
+  ],
+  "bin": {
+    "ele": "bin/ele-deploy.js"
+  },
+  "author": "Angus Yang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngusYang9/ele-deploy/issues"
+  },
+  "homepage": "https://github.com/AngusYang9/ele-deploy#readme",
+  "dependencies": {
+    "colors": "1.2.1",
+    "commander": "2.19.0",
+    "copy-dir": "0.3.0",
+    "delete": "0.3.2",
+    "md5": "2.2.1",
+    "request": "^2.88.0",
+    "shell-spawn": "^2.0.1"
+  }
+}
