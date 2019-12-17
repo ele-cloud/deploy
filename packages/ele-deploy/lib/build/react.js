@@ -49,7 +49,7 @@ module.exports = async function (opts, spConfig) {
   } else if (suffix === 'tar') {
     await sp('tar -cvf ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
   } else if (suffix === 'tar.gz') {
-    await('tar -zcvf ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
+    await sp('tar -zcvf ' + opts.project + ' ./*', spConfig).catch(ex => errorLog(ex));
   } else {
     throw new Error('不支持【' + suffix + '】的打包形式');
   }
