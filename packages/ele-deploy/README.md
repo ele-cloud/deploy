@@ -52,7 +52,7 @@ package.json
 ## 配置参数
 
 - `-c | --company` : 项目公司名称
-- `-p | --project` : 项目文件包名称 （支持三种后缀名格式：`.zip` `.tar` `tar.gz`）
+- `-p | --project` : 项目文件包名称 （支持三种后缀名格式：`.zip` `.tar` `.tar.gz`）
 - `--react` : 是否为 react 项目 （默认：否）
 - `-d | --debug`: 查看更多信息
 
