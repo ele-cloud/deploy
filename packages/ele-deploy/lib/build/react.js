@@ -24,7 +24,7 @@ function requestAnimation(opts, spConfig) {
     }
     
     utils.logs([
-      ['info: 部署完成😊']
+      ['info: 部署完成😊，项目地址：http://121.36.50.216:4002/' + opts.company]
     ]);
     
     // remove deflate data
