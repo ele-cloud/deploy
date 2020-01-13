@@ -2,8 +2,10 @@ var path = require('path');
 var utils = require('./backend-utils/utils')
 var config = require('./config')
 
-var react = require('./build/react');
-var vue = require('./build/vue');
+// var react = require('./build/react');
+// var vue = require('./build/vue');
+var react = require('./huawei-obs/build/react');
+var vue = require('./huawei-obs/build/vue');
 
 var entry = {
   /**

@@ -10,7 +10,7 @@
 
 现如今，全税部门项目日益增多，每个项目开发完成后，需要手动构建并将文件包发送给运维同学部署。测试环境、生产环境，每次部署都会听到运维向你呼喊：“同学，**项目前端打个包发我一份”，那么为了规避这种现象，我们的 `ele-deploy` 应运而生。只需一个命令，将前端包部署至资源系统，想要最新包，那你就去下👋。
 
-[资源服务器地址](http://121.36.50.216:4002)
+[资源服务器地址](http://dxhy.90paw.com:4002)
 
 ## 安装
 
@@ -61,19 +61,19 @@ package.json
 可直接在浏览器中输入：
 
 ```bash
-http://121.36.50.216:4002/delete/${company}/${project}
+http://dxhy.90paw.com:4002/delete/${company}/${project}
 ```
 
 - 删除项目
 
 ```bash
-http://121.36.50.216:4002/delete/大象产品线/declare-vue.tar.gz
+http://dxhy.90paw.com:4002/delete/大象产品线/declare-vue.tar.gz
 ```
 
 - 删除公司
 
 ```bash
-http://121.36.50.216:4002/delete/大象产品线
+http://dxhy.90paw.com:4002/delete/大象产品线
 ```
 
 > 为前端留个后门，谨防线上误操作。
