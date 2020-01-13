@@ -56,24 +56,6 @@ package.json
 - `--react` : 是否为 react 项目 （默认：否）
 - `-d | --debug`: 查看更多信息
 
-## 删除项目
+## 其他说明
 
-可直接在浏览器中输入：
-
-```bash
-http://dxhy.90paw.com:4002/delete/${company}/${project}
-```
-
-- 删除项目
-
-```bash
-http://dxhy.90paw.com:4002/delete/大象产品线/declare-vue.tar.gz
-```
-
-- 删除公司
-
-```bash
-http://dxhy.90paw.com:4002/delete/大象产品线
-```
-
-> 为前端留个后门，谨防线上误操作。
+**ele-deploy 应用华为云Nodejs SDK，进行obs操作，并通过cdn来提升访问速度。**

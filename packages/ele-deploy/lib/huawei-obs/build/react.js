@@ -3,6 +3,7 @@ var path = require('path');
 var sp = require('shell-spawn');
 var request = require('request');
 var del = require('delete');
+var ObsClient = require('../lib/obs');
 
 var config = require('../../config');
 var utils = require('../../backend-utils/utils');
