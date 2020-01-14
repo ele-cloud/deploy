@@ -1,15 +1,14 @@
 {
-  "name": "ele-deploy",
-  "version": "1.1.0",
+  "name": "@ele-cloud/ele-deploy",
+  "version": "0.0.1",
   "description": "ele cloud deploy script",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AngusYang9/ele-deploy.git"
+    "url": "git://github.com/ele-cloud/ele-deploy.git"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "deploy"
   ],
@@ -19,9 +18,9 @@
   "author": "Angus Yang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AngusYang9/ele-deploy/issues"
+    "url": "https://github.com/ele-cloud/ele-deploy/issues"
   },
-  "homepage": "https://github.com/AngusYang9/ele-deploy#readme",
+  "homepage": "https://github.com/ele-cloud/ele-deploy#readme",
   "dependencies": {
     "colors": "1.2.1",
     "commander": "^4.0.1",
