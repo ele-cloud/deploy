@@ -1,6 +1,6 @@
 {
   "name": "ele-deploy",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "ele cloud deploy script",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/AngusYang9/ele-deploy.git"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "deploy"
   ],
