@@ -1,7 +1,6 @@
 <h3 align="center" style="margin: 30px 0 35px;">ELE DEPLOY</h3>
 <p align="center">
-  <a href="https://www.npmjs.com/package/ele-deploy"><img alt="npm" src="https://img.shields.io/npm/v/ele-deploy"></a>
-  <a href="https://raw.githubusercontent.com/AngusYang9/ele-deploy/master/LICENSE"><img alt="NPM" src="https://img.shields.io/npm/l/ele-deploy"></a>
+  <a href="https://www.npmjs.com/package/@ele-cloud/ele-deploy"><img alt="npm" src="https://img.shields.io/npm/v/@ele-cloud/ele-deploy"></a>
 </p>
 
 ---
@@ -15,7 +14,7 @@
 ## 安装
 
 ```
-npm install --save ele-deploy
+npm install --save @ele-cloud/ele-deploy
 ```
 
 ## 使用说明
