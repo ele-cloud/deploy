@@ -28,7 +28,7 @@ module.exports = async function (opts, spConfig) {
     throw new Error('不支持【' + suffix + '】的打包形式');
   }
   var oldProject = path.resolve(spConfig.cwd, opts.project);
-  var payloadSuffix = buildUtils.md5Suffix(fs.readFileSync(oldProject));
+  var payloadSuffix = encodeURIComponent(buildUtils.md5Suffix(fs.readFileSync(oldProject)));
   var newName = opts.project.replace(/\..+$/, '') + '_' + payloadSuffix + '.' + suffix;
   var newProject = path.resolve(spConfig.cwd, newName);
   fs.renameSync(oldProject, newProject);
