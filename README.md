@@ -14,7 +14,7 @@
 ## 安装
 
 ```
-npm install --save @ele-cloud/ele-deploy
+npm install --save @ele-cloud/deploy
 ```
 
 ## 使用说明
@@ -31,7 +31,7 @@ package.json
 ```javascript
 "scripts": {
   //...
-  "deploy": "matriks2 dest && ele --company 大象产品线 --project declare-react.tar.gz --react"
+  "deploy": "matriks2 dest && ele-deploy --company 大象产品线 --project declare-react.tar.gz --react"
  }
 ```
 
