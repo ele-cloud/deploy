@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/ele-cloud/ele-deploy.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "deploy"
   ],
