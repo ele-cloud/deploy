@@ -46,6 +46,7 @@ package.json
  }
 ```
 
+
 配置完成后，在项目根目录下运行 `npm run deploy` 或 `yarn deploy` ，开始进行部署。
 
 ## 配置参数
