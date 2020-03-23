@@ -1,6 +1,6 @@
 <h3 align="center" style="margin: 30px 0 35px;">DEPLOY</h3>
 <p align="center">
-  <a href="https://www.npmjs.com/package/@ele-cloud/ele-deploy"><img alt="npm" src="https://img.shields.io/npm/v/@ele-cloud/deploy"></a>
+  <a href="https://www.npmjs.com/package/@ele-cloud/deploy"><img alt="npm" src="https://img.shields.io/npm/v/@ele-cloud/deploy"></a>
 </p>
 
 ---
