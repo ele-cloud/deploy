@@ -42,7 +42,7 @@ package.json
 ```javascript
 "scripts": {
   //...
-  "deploy": "npm run build && ele --company 大象产品线 --project declare-vue.tar.gz"
+  "deploy": "npm run build && ele-deploy --company 大象产品线 --project declare-vue.tar.gz"
  }
 ```
 

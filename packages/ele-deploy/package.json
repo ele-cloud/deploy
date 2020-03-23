@@ -16,7 +16,7 @@
     "deploy"
   ],
   "bin": {
-    "ele": "bin/ele-deploy.js"
+    "ele-deploy": "bin/ele-deploy.js"
   },
   "author": "Angus Yang",
   "license": "ISC",
