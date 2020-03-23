@@ -58,3 +58,4 @@ package.json
 ## 其他说明
 
 **ele-deploy 应用华为云Nodejs SDK，进行obs操作，并通过cdn来提升访问速度。**
+
